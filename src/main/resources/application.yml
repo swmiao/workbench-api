@@ -1,0 +1,34 @@
+# 服务端口
+server:
+  port: 9090
+  servlet:
+    context-path: /workbench
+
+
+#数据库配置
+#jdbc:postgresql://dev-workbench-db-pg.postgres.database.azure.com:5432/{your_database}?user=workbenchAdmin@dev-workbench-db-pg&password={your_password}&sslmode=require
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://dev-workbench-db-pg.postgres.database.azure.com:5432/postgres
+    username: workbenchAdmin@dev-workbench-db-pg
+    password: Pwcwelcome123
+    druid:
+      #初始化连接大小
+      initial-size: 5
+      #最小空闲连接数
+      min-idle: 2
+      #最大连接数
+      max-active: 10
+      #查询超时时间
+      query-timeout: 6000
+      #事务查询超时时间
+      transaction-query-timeout: 6000
+      #关闭空闲连接超时时间
+      remove-abandoned-timeout: 1800
+      filters: stat,config
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:com/pwc/workbench/dao/*.xml
