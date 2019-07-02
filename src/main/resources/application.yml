@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://dev-workbench-db-pg.postgres.database.azure.com:5432/postgres
+    url: jdbc:postgresql://dev-workbench-db-pg.postgres.database.azure.com:5432/postgres?sslmode=require&ssl=true
     username: workbenchAdmin@dev-workbench-db-pg
     password: Pwcwelcome123
     druid:
